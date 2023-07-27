@@ -24,6 +24,6 @@ javac --version
 
 - JShell: Read-Eval-Print-Loop interactive program (REPL)
 
-Just type `jshell` in terminal. Use `{` to add code in multiple lines followed by enter. Use `/help` or `/exit` to exit the JShell.
+Just type `jshell` in terminal. Use `{` or any other parenthesis to add code in multiple lines followed by enter. Use `/help` or `/exit` to exit the JShell.
 
 `/list` will show all the commands you've executed in the JShell session
