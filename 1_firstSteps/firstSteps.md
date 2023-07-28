@@ -59,7 +59,7 @@ System.out.print("Total is = " + total);
 ---
 Primitive Data Types (eight) : (basic data types)
 
-- Whole numbers -- byte, short, int, long ; long (largest) and byte (smallest) ; integer is default for numbers
+- Whole numbers -- byte, short, int, long ; long (largest) and byte (smallest) ; integer is default for whole numbers
 - Real numbers -- float, double
 - Single character -- char
 - Boolean value -- boolean
@@ -93,7 +93,7 @@ Both will result in: `myNum ==> -2147483648`
 
 - If we give a numeric (literal) value instead of an expression, it will simply throw an error for number being too large.
 
-### Size of Data types
+#### Size of Data types
 
 Amount of space occupied in memory (in bits) :
 
@@ -106,7 +106,8 @@ Can use wrapper class to get size. `System.out.print(Long.SIZE)`
 
 Note:
 
-- to create long, need 'L' or 'l' suffix to the value (especially when number is larger than Integer.MAX_VALUE) unless java considers it as integer.
+- to create long, need `L` or `l` suffix to the value (especially when number is larger than Integer.MAX_VALUE) unless java considers it as integer.
+- This is only the case when you're passing numeric literals, expressions are fine
 
 ```java
 long myLongNum = 1256463 ; // should be fine as value is less than Integer.MAX_VALUE
@@ -114,3 +115,43 @@ long myLongNum = 3_214_651_321_654; // will throw an error for integer number to
 long myLongNum = 3_214_651_321_654L; // will create the long variable
 ```
 
+- can also declare multiple variables of same data type in one statement using commas
+
+```java
+int myNum = 24, myNum2 = 25;
+```
+
+### Casting
+
+---
+Manually converting a data type to another. Using ().
+
+```java
+byte myNewByte = (byte) (myMinValue / 2);
+byte myNewByte2 = (byte) 23;
+```
+
+- Here if we don't specify byte an error will be thrown because default output value of expressions in java is integer.
+- it should be fine if we are using literal values, ex. (126/2), because for that compiler pre-determines the result and knows whether value can fit into `short` or not.
+
+Ex:
+
+```java
+byte myByte = 22 ; short myShort = 256 ; int myInt = 65536 ;
+
+long myLong = (long) (50_000L + (10*(myByte + myShort + myInt)));
+```
+
+### Floating Point Numbers
+
+---
+
+- double ; default for real numbers in java (is larger and more precise)
+- float
+
+for numeric literals, in case of double can use suffix `d` or `D`, optional as double is default. Suffix `f` or `F` for float and is required.
+
+```java
+float myFloat1 = 5.26F; //prefered
+float myFloat = (float) 5.26;
+```
