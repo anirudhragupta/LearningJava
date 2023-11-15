@@ -146,12 +146,17 @@ long myLong = (long) (50_000L + (10*(myByte + myShort + myInt)));
 
 ---
 
-- double ; default for real numbers in java (is larger and more precise)
+- double ; default for real numbers in java (is larger and more precise), but needs twice the amount of memory
 - float
 
-for numeric literals, in case of double can use suffix `d` or `D`, optional as double is default. Suffix `f` or `F` for float and is required.
+for numeric literals, in case of double can use suffix `d` or `D`, optional as double is default, any number with decimal is double. Suffix `f` or `F` for float and is required.
 
 ```java
 float myFloat1 = 5.26F; //prefered
 float myFloat = (float) 5.26;
+
+System.out.print("Max Float value: " + Float.MAX_VALUE + "\nMin Float value: " + Float.MIN_VALUE)
+
+System.out.print("Max Double value: " + Double.MAX_VALUE + "\nMin Double value: " + Double.MIN_VALUE)
 ```
+
